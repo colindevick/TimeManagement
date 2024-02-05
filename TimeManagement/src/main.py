@@ -4,4 +4,7 @@ Created on Jan 30, 2024
 @author: Colin
 '''
 
-print("Hello World!")
+def main():
+    print("main")
+if __name__ == "__main__" :
+    print("main")
