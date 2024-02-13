@@ -14,22 +14,25 @@ def settingsExist():
 
 def convertTodictionary():
     settingsExist()
+    websites = list("")
     settingsDict= {
 "theme": "",
 "motivationwebsites": "",
 "productivesites": ""
 }
     file = open(path, "r")
-    #TODO add logic of adding motivation and productive websites to the dictionary
+    #TODO add logic of productive websites to the dictionary
     for line in file:
-        if not line.startswith("motive:") and not line.startswith ("productive:"):
+        if not line.startswith("motive") and not line.startswith ("protive"):
             key = line.slice[0:line.find(" ")]
             value = line.split.rslice[0: line.find("=")]
             settingsDict.update({key: settingsDict.get(key)})
+        elif line.startswith("motive"):
+            websites.append(line.index(line.index(":"), line.__sizeof__))
+
 
             
 
-    
 
 
-
+    return settingsDict
