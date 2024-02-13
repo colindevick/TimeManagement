@@ -14,7 +14,8 @@ def settingsExist():
 
 def convertTodictionary():
     settingsExist()
-    websites = list("")
+    websitesMotive = list("")
+    websitesProtive = list("")
     settingsDict= {
 "theme": "",
 "motivationwebsites": "",
@@ -28,11 +29,7 @@ def convertTodictionary():
             value = line.split.rslice[0: line.find("=")]
             settingsDict.update({key: settingsDict.get(key)})
         elif line.startswith("motive"):
-            websites.append(line.index(line.index(":"), line.__sizeof__))
-
-
-            
-
-
-
+            websitesMotive.append(line.index(line.index(":"), line.__sizeof__))
+        elif line.startswith("protive"):
+            websitesProtive.append(line.index(line.index(":"), line.__sizeof__))
     return settingsDict
