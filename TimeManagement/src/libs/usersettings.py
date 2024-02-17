@@ -17,17 +17,17 @@ def convertTodictionary():
     websitesMotive = list("")
     websitesProtive = list("")
     settingsDict= {
-"theme": "",
-"motivationwebsites": "",
-"productivesites": ""
+'theme': "",
+'motivationsites': "",
+'productivesites': ""
 }
     file = open(path, "r")
     #TODO add logic of productive websites to the dictionary
     for line in file:
         if not line.startswith("motive") and not line.startswith ("protive"):
-            key = line.slice[0:line.find(" ")]
-            value = line.split.rslice[0: line.find("=")]
-            settingsDict.update({key: settingsDict.get(key)})
+            key = line[0:line.find(" ")]
+            keyValue = line[line.index("=") + 1: line.find("\n")]
+            settingsDict.update({key:(settingsDict.get(key) + keyValue).strip()})
         elif line.startswith("motive"):
             websitesMotive.append(line.index(line.index(":"), line.__sizeof__))
         elif line.startswith("protive"):
