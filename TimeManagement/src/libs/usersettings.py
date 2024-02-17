@@ -6,7 +6,7 @@ def settingsExist():
       if os.path.isfile(path):
           print("Found Settings\n")
       else:
-        file = open(path,"x")
+        file = open(path,"w")
         file.write("theme = System\n" 
                    "motivationsites =\n"
                    "productivesites =\n")
@@ -32,4 +32,5 @@ def convertTodictionary():
             websitesMotive.append(line.index(line.index(":"), line.__sizeof__))
         elif line.startswith("protive"):
             websitesProtive.append(line.index(line.index(":"), line.__sizeof__))
+    file.close
     return settingsDict
